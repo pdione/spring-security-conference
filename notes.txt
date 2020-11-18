@@ -60,6 +60,8 @@ CREATE UNIQUE INDEX ix_auth_username
 INSERT INTO authorities (username, authority)
   values ('bryan', 'ROLE_USER');
 
+update users set nickname = 'bigb' where username = 'bryan'
+
 <dependency>
     <groupId>org.springframework.ldap</groupId>
     <artifactId>spring-ldap-core</artifactId>
