@@ -60,6 +60,18 @@ CREATE UNIQUE INDEX ix_auth_username
 INSERT INTO authorities (username, authority)
   values ('bryan', 'ROLE_USER');
 
+
+CREATE TABLE persistent_logins (
+    username VARCHAR(50) NOT NULL,
+    series VARCHAR(50) PRIMARY KEY,
+    token varchar(50) NOT NULL,
+    last_used TIMESTAMP NOT NULL,
+    FOREIGN KEY (username) REFERENCES users(username)
+);
+
+<c:out value='perform_logout'/> allows to build perform_logout url correctly.
+
+
 <dependency>
     <groupId>org.springframework.ldap</groupId>
     <artifactId>spring-ldap-core</artifactId>
