@@ -47,7 +47,7 @@ public class PasswordController {
         //should verify valid email address
         //verify email from database
         //fire off an event to reset email
-        eventPublisher.publishEvent(new OnPasswordResetEvent(password, "conference_war"));
+        eventPublisher.publishEvent(new OnPasswordResetEvent(password, "conference"));
         return "redirect:password?sent=true";
     }
 

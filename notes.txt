@@ -60,6 +60,15 @@ CREATE UNIQUE INDEX ix_auth_username
 INSERT INTO authorities (username, authority)
   values ('bryan', 'ROLE_USER');
 
+CREATE TABLE reset_tokens
+(
+    email       VARCHAR(100) NOT NULL,
+    username    VARCHAR(50)  NOT NULL,
+    token       VARCHAR(100) NOT NULL,
+    expiry_date DATETIME     NOT NULL,
+    PRIMARY KEY (email, token)
+);
+
 <dependency>
     <groupId>org.springframework.ldap</groupId>
     <artifactId>spring-ldap-core</artifactId>
