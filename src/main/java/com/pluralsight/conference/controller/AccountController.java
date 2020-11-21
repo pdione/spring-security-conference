@@ -48,7 +48,7 @@ public class AccountController {
         account = accountService.create(account);
 
         //fire off an event on creation
-        eventPublisher.publishEvent(new OnCreateAccountEvent(account,"conference_war"));
+        eventPublisher.publishEvent(new OnCreateAccountEvent(account,"conference"));
         return "redirect:account";
     }
 
